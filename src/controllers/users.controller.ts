@@ -1,19 +1,32 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 
 @Controller('users')
 export class UsersController {
   @Get()
   getUser() {
-    return `This route is for all users`;
+    return {
+      message: `This route is for all users`,
+    };
   }
 
   @Get(':id')
   getUserById(@Param('id') id: number) {
-    return `Id user: ${id}`;
+    return {
+      message: `Id user: ${id}`,
+    };
   }
 
   @Get(':name')
   getUserByName(@Param('name') name: string) {
-    return `Username: ${name}`;
+    return {
+      message: `Username: ${name}`,
+    };
+  }
+
+  @Post()
+  create(@Body() payload: any) {
+    return {
+      payload,
+    };
   }
 }
