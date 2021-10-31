@@ -8,35 +8,39 @@ import {
   Put,
 } from '@nestjs/common';
 
+import { CustomersService } from '../services/customers.service';
+import { CreateCustomerDTO, UpdateCustomerDTO } from '../dtos/customers.dtos';
+import { ParseIntPipe } from 'src/common/parse-int.pipe';
+
 @Controller('customers')
 export class CustomersController {
+  constructor(private customersService: CustomersService) {}
+
   @Get()
   getAllCustomer() {
-    return {
-      message: 'This route is for all customers',
-    };
+    return this.customersService.findAll();
+  }
+
+  @Get(':id')
+  getCustomer(@Param('id', ParseIntPipe) id: number) {
+    return this.customersService.findOne(id);
   }
 
   @Post()
-  create(@Body() payload: any) {
-    return {
-      message: 'Customer successfully created',
-      payload,
-    };
+  create(@Body() payload: CreateCustomerDTO) {
+    return this.customersService.create(payload);
   }
 
   @Put(':id')
-  update(@Param('id') id: number, @Body() payload: any) {
-    return {
-      message: `Update customer with Id: ${id}`,
-      payload,
-    };
+  update(
+    @Param('id', ParseIntPipe) id: number,
+    @Body() payload: UpdateCustomerDTO,
+  ) {
+    return this.customersService.update(id, payload);
   }
 
   @Delete(':id')
-  delete(@Param('id') id: number) {
-    return {
-      message: `Delete customer with Id: ${id}`,
-    };
+  delete(@Param('id', ParseIntPipe) id: number) {
+    return this.customersService.remove(id);
   }
 }
