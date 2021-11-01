@@ -8,7 +8,7 @@ import {
   Put,
 } from '@nestjs/common';
 
-import { CustomersService } from '../services/customers.service';
+import { CustomersService } from '../service/customers.service';
 import { CreateCustomerDTO, UpdateCustomerDTO } from '../dtos/customers.dtos';
 import { ParseIntPipe } from 'src/common/parse-int.pipe';
 
