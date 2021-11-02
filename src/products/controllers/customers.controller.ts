@@ -9,7 +9,7 @@ import {
 } from '@nestjs/common';
 
 import { CustomersService } from '../service/customers.service';
-import { CreateCustomerDTO, UpdateCustomerDTO } from '../dtos/customers.dtos';
+import { CreateCustomerDTO, UpdateCustomerDTO } from '../dtos/customers.dto';
 import { ParseIntPipe } from 'src/common/parse-int.pipe';
 
 @Controller('customers')

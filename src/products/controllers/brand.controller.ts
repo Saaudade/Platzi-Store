@@ -10,7 +10,7 @@ import {
 import { ParseIntPipe } from 'src/common/parse-int.pipe';
 
 import { BrandService } from '../service/brand.service';
-import { CreateBrandDTO, UpdateBrandDTO } from '../dtos/brand.dtos';
+import { CreateBrandDTO, UpdateBrandDTO } from '../dtos/brand.dto';
 
 @Controller('brand')
 export class BrandController {

@@ -14,7 +14,7 @@ import {
 
 import { ProductsService } from '../service/products.service';
 import { ParseIntPipe } from '../../common/parse-int.pipe';
-import { CreateProductDTO, UpdateProductDTO } from '../dtos/products.dtos';
+import { CreateProductDTO, UpdateProductDTO } from '../dtos/products.dto';
 
 @Controller('products')
 export class ProductsController {
