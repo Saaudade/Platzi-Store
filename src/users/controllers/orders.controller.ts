@@ -16,31 +16,31 @@ import { CreateOrderDTO, UpdateOrderDTO } from '../dtos/orders.dtos';
 export class OrdersController {
   constructor(private ordersService: OrdersService) {}
 
-  @Get()
-  getOrders() {
-    return this.ordersService.findAll();
-  }
+  // @Get()
+  // getOrders() {
+  //   return this.ordersService.findAll();
+  // }
 
-  @Get(':id')
-  getOrder(@Param('id', ParseIntPipe) id: number) {
-    return this.ordersService.findOne(id);
-  }
+  // @Get(':id')
+  // getOrder(@Param('id', ParseIntPipe) id: number) {
+  //   return this.ordersService.findOne(id);
+  // }
 
-  @Post()
-  create(@Body() payload: CreateOrderDTO) {
-    return this.ordersService.create(payload);
-  }
+  // @Post()
+  // create(@Body() payload: CreateOrderDTO) {
+  //   return this.ordersService.create(payload);
+  // }
 
-  @Put(':id')
-  update(
-    @Param('id', ParseIntPipe) id: number,
-    @Body() payload: UpdateOrderDTO,
-  ) {
-    return this.ordersService.update(id, payload);
-  }
+  // @Put(':id')
+  // update(
+  //   @Param('id', ParseIntPipe) id: number,
+  //   @Body() payload: UpdateOrderDTO,
+  // ) {
+  //   return this.ordersService.update(id, payload);
+  // }
 
-  @Delete(':id')
-  delete(@Param('id', ParseIntPipe) id: number) {
-    return this.ordersService.remove(id);
-  }
+  // @Delete(':id')
+  // delete(@Param('id', ParseIntPipe) id: number) {
+  //   return this.ordersService.remove(id);
+  // }
 }
