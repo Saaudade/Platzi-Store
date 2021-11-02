@@ -7,11 +7,13 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 
 import { ParseIntPipe } from 'src/common/parse-int.pipe';
 import { CreateUserDTO, UpdateUserDTO } from 'src/users/dtos/users.dto';
 import { UsersService } from 'src/users/services/users.service';
 
+@ApiTags('users')
 @Controller('users')
 export class UsersController {
   constructor(private usersService: UsersService) {}
